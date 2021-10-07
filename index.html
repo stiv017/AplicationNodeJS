@@ -1,0 +1,419 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" href="design.css">
+<link rel="stylesheet" href="forma.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+body {
+     padding: 10px;
+}
+ * {
+     background-color: #fff;
+}
+ h1 {
+     margin-top: 0;
+}
+ h2 {
+     margin-top: 40px;
+}
+ .form {
+     padding: 20px;
+}
+ .form .title {
+     margin-bottom: 60px;
+}
+ .form .row:nth-child(even) {
+     padding-bottom: 20px;
+     margin-bottom: 30px;
+     border-bottom: #ccc thin solid;
+}
+input[type=checkbox]:checked+span{
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/design.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+<div class="container form" id="form">
+    <div class="row title hidden-print">
+        
+  
+		
+<form class="w3-container w3-card">
+<h2>Unos Podataka</h2>
+  <p>
+  <label>Tip Vozila</label>
+  <input class="w3-input" type="text" id="tipVozila">
+    <label>Reg.Br. Vozila</label>
+  <input class="w3-input" type="text" id="regBr">  
+  
+   <label>Marka Vozila/Model Vozila</label>
+  <input class="w3-input" type="text" id="brMotora">
+     
+  
+  </p>
+  <p>
+  <label>Ime i Prezime</label>
+  <input class="w3-input" type="text" id="ime">
+  <label>Br L.K</label>
+  <input class="w3-input" type="text" id="maticni">
+  <label>Telefon</label>
+  <input class="w3-input" type="text" id="telefon-u">
+  </p>
+   
+  <p>
+  <label>Vozacka dozvola br</label>
+  <input class="w3-input" type="text" id="voz-br-u">
+  <label>Izdata u </label>
+  <input class="w3-input" type="text" id="mestoIzdavanja-u">
+  <label>Važi do</label>
+  <input class="w3-input" type="text" id="datumIzdavanja-u">
+  <label>Adresa</label>
+  <input class="w3-input" type="text" id="adresaK">
+  </p>
+  <p>
+      <label>Početak najma </label>
+	  <input class="w3-input" type="date" id="datumPreuzimanja-u" >
+	  <label>Predviđeno vraćanje </label>
+	  <input class="w3-input" type="datetime-local" id="pocetnaKilometraza-u">
+	  <label>Završetak najma </label>
+	  <input class="w3-input" type="datetime-local" id="datumVracanja-u">
+	  <label>Produžetak dana </label>
+	  <input class="w3-input" type="text" id="produzetakDana-u">
+  </p>
+  <p>
+  <p>Podaci o dodatnom vozacu</p>
+     <label>Ime i Prezime</label>
+     <input class="w3-input" type="text" id="imed-u">
+	  <label>JMBG i Broj L.K</label>
+      <input class="w3-input" type="text" id="jmbgd-u">
+	  <label>Adresa</label>
+      <input class="w3-input" type="text" id="adresad-u">
+	     <label>Vozacka dozvola br</label>
+        <input class="w3-input" type="text" id="voz-br-d-u">
+		  <label>Izdata u </label>
+       <input class="w3-input" type="text" id="mestoIzdavanja-d-u">
+	    <label>DatumIzdavanja</label>
+       <input class="w3-input" type="text" id="datumIzdavanja-d-u">
+	   <label>Telefon</label>
+       <input class="w3-input" type="text" id="telefon-d-u">
+  </p>
+  
+  <P><button type="button" class="w3-btn w3-blue" id="save" onclick="myFunction()">Unos</button>
+</form>
+
+<script>
+function formatDate (input) {
+  var datePart = input.match(/\d+/g),
+  year = datePart[0].substring(2), 
+  month = datePart[1], day = datePart[2];
+
+  return day+'.'+month+'.'+year;
+}
+function myFunction() {
+  var tipVozila=document.getElementById("tipVozila").value;
+  var regBr=document.getElementById("regBr").value;
+  var brojMotora=document.getElementById("brMotora").value;
+  var ime=document.getElementById("ime").value;
+  var jmbg=document.getElementById("maticni").value;
+  var adresa=document.getElementById("adresaK").value;
+  var brojVozackeDozvole=document.getElementById("voz-br-u").value;
+  var mestoIzdavanja=document.getElementById("mestoIzdavanja-u").value;
+  var datumIzdavanja=document.getElementById("datumIzdavanja-u").value;
+  var telefon=document.getElementById("telefon-u").value;
+  var datumPruzimanja=document.getElementById("datumPreuzimanja-u").value;
+  var pocetnaKilometraza=document.getElementById("pocetnaKilometraza-u").value;
+  var datumVracanja=document.getElementById("datumVracanja-u").value;
+  var imeD=document.getElementById("imed-u").value;
+  var jmbgD=document.getElementById("jmbgd-u").value;
+  var adresaD=document.getElementById("adresad-u").value;
+  var brojVozackeDozvoleD=document.getElementById("voz-br-d-u").value;
+  var mestoIzdavanjaD=document.getElementById("mestoIzdavanja-d-u").value;
+  var datumIzdavanjaD=document.getElementById("datumIzdavanja-d-u").value;
+  var telefonD=document.getElementById("telefon-d-u").value;
+  var produzetakDana=document.getElementById("produzetakDana-u").value;
+  document.getElementById("r").value = tipVozila;
+  document.getElementById("regBroj").value = regBr;
+  document.getElementById("motorBr").value = brojMotora;
+  document.getElementById("imePrezime").value =ime;
+  document.getElementById("jmbg").value =jmbg;
+  document.getElementById("adresa").value =adresa;
+  document.getElementById("voz-br").value=brojVozackeDozvole;
+  document.getElementById("mestoIzdavanja").value=mestoIzdavanja;
+  document.getElementById("datumIzdavanja").value=datumIzdavanja;
+  document.getElementById("telefon").value=telefon;
+  document.getElementById("datumPreuzimanja").value=formatDate(datumPruzimanja);
+  document.getElementById("pocetnaKilometraza").value=formatDate(pocetnaKilometraza);
+  document.getElementById("datumVracanja").value=formatDate(datumVracanja);
+  
+  document.getElementById("imed").value =imeD;
+  document.getElementById("jmbgd").value =jmbgD;
+  document.getElementById("adresad").value =adresaD;
+  document.getElementById("voz-br-d").value=brojVozackeDozvoleD;
+  document.getElementById("mestoIzdavanja-d").value=mestoIzdavanjaD;
+  document.getElementById("datumIzdavanja-d").value=datumIzdavanjaD;
+  document.getElementById("telefon-d").value=telefonD;
+  document.getElementById("ugovor").value=ime;
+  document.getElementById("produzetakDana").value=produzetakDana;
+}
+</script>
+    </div>
+    <div id="first-page" style="text-align:center;">
+            
+<table id="tblCustomers">
+<tr>
+<td class="heder-1">
+<h1>LIMO CARS DOO</h1>
+<p > Partizanski put 1d,17500,Vranje,Srbija</p>
+</br>
+<p> Mob:+381638280272</p>
+</br>
+<p>e-mail:rentacarvranje@gmail.com</p>
+</td>
+<td class="heder-2-1">
+<img src="img/maki.jpg"  class="heder-2" alt="Logo"> 
+</td>
+<td class="heder-3">
+<p style="text-align:left;font-size:24px;">Raiffeisen bank:265-4110310001454-37</p>
+
+<p>Maticni Broj:21319384</p> 
+<p>PIB110221873</p>
+</td>
+
+</tr>
+<tr >
+<td class="body-1">   <h1 > Ugovor o najamu/Rental Agreement</h1></td>
+<td class="brojUgovora"> <p style="text-align:center;font-size:28px;"> Broj Ugovora <input type="text" id="brojUgovora" class="form__field" size="20"></p></td>
+</tr>
+<tr>
+<td class="body-2">
+<h2>PODACI O VOZILU(CAR DATA)</h2>
+<p class="slova">Tip Vozila<input type="text" id="r" class="form__field" size="20"></p>
+</br>
+<p class="slova"> Reg.Br.Vozila<input type="text" id="regBroj" class="form__field" size="20"></p>
+</br>
+<p class="slova">Marka Vozila/Model Vozila<input type="text" id="motorBr" class="form__field" size="20"></p>
+</br>
+<h2>PODACI O KORISNIKU(RENTER)</h2>
+<p class="slova">Ime i Prezime<input type="text" id="imePrezime" class="form__field" size="20"></p>
+</br>
+<p class="slova">Br.L.K<input type="text" id="jmbg" class="form__field" size="20"></p>
+</br>
+<p class="slova">Adresa<input type="text" id="adresa" class="form__field" size="20"></p>
+</br>
+<p class="slova">Vozacka dozvola br.<input type="text" id="voz-br" class="form__field" size="20"> izdata u <input type="text" id="mestoIzdavanja" class="form__field" size="20">važi do<input type="text" class="form__field" id="datumIzdavanja" size="20"> </p>
+</br>
+<p class="slova">Telefon<input type="text" id="telefon" class="form__field" size="20"></p>
+</br>
+<h2>Najam(Rental)</h2>
+<p class="slova">Početak najma<input type="text" id="datumPreuzimanja" class="form__field" size="20"></p>
+</br>
+<p class="slova">Predviđeno vraćanje<input type="text" id="pocetnaKilometraza" class="form__field" size="20"></p>
+</br>
+<p class="slova">Završetak najma <input type="text" class="form__field" id="datumVracanja" size="20"></p>
+</br>
+<p class="slova">Produžetak dana <input type="text" class="form__field" id="produzetakDana" size="20"></p>
+<h2>Kilometraza(Distance in kilometers)</h2>
+<p class="slova"><input type="checkbox"/><span>1.OGRANICENA</span><input type="checkbox"/> <span>2.NEOGRANICENA</span></p>
+</td>
+
+<td class="body-3">
+<h2>Stanje Vozila(CAR CONDITION)</h2>
+<ul>
+  <li class="slova"><input type="checkbox"/><span>Pribor za prvu pomoc-First Aid</span></li>
+  <li class="slova"><input type="checkbox"/><span>Rezervni set sijalica-Spare Bulb Set</span></li>
+  <li class="slova"><input type="checkbox"/><span>Rezerna guma-Spare Wheel</span></li>
+  <li class="slova"><input type="checkbox"/><span>Uže za vuču-Car Tow Rope</span></li>
+  <li class="slova"><input type="checkbox"/><span>Protiv požarni aparat-fire extinguisher for cars</span></li>
+  <li class="slova"><input type="checkbox"/><span>Dizalica-WHEEL JACK</span></li>
+  <li class="slova"><input type="checkbox"/><span>Sigurnosni Trougao-Trinagle</span></li>
+  <li class="slova"><input type="checkbox"/><span>Lanci za sneg-Snow Chains</span></li>
+  <li class="slova"><input type="checkbox"/><span>Ključ za menjanje točkova-Wheel Change Key</span></li>
+</ul> 
+</br>
+<h2>Dodatni vozac(Additional Driver)</h2>
+<p class="slova">Ime i Prezime<input type="text" id="imed" class="form__field" size="20"></p>
+</br>
+<p class="slova"> Br.L.K<input type="text" id="jmbgd" class="form__field" size="20"></p>
+</br>
+<p class="slova">Adresa<input type="text" id="adresad" class="form__field" size="20"></p>
+</br>
+<p class="slova">Vozacka dozvola br.<input type="text" id="voz-br-d" class="form__field" size="20"> izdata u <input type="text" id="mestoIzdavanja-d" class="form__field" size="20">važi do<input type="text" class="form__field" id="datumIzdavanja-d" size="20"> </p>
+</br>
+<p class="slova">Telefon<input type="text" id="telefon-d" class="form__field" size="20"></p>
+</br>
+<h2>Dozvola za boravak u inostranstvo</h2>
+<p class="slova"><input type="checkbox"/><span>DOZVOLJEN</span><input type="checkbox"/> <span>NEDOZVOLJEN</span></p>
+</td>
+</tr>
+<tr class="body-4" >
+<th>Ostecenja na vozilu</th>
+<td class="body-4-1" ><img src="img/ostecenja.jpg"style="text-align:center;widt:33%;height:20%;" alt="Skica"></td>
+<td><p style="margin-bottom:124px;">Napomena</p></td>
+</tr>
+</table>
+
+  <p>
+    </div>
+	<div class="col-sm-6 text-right"><a class="btn btn-success" id="exportForm">Preuzmi Dokument</a></div>
+	</br>
+	</br>
+    <div id="second-page">
+        
+        <div class="zakon">    
+                <h4 style="text-align:left;">ODREDBE I USLOVI UGOVORA O NAJAMU</h4>
+				<p class="ugovor"style="text-align:left;">Zaključen između LIMO CARS DOO (u daljem tekstu LIMO CARS) i <input type="text" id="ugovor" class="form__field" size="20">u daljem tekstu korisnik)</p>
+				<h6 style="text-align:center">Član 1</h6
+				<p class="clan1"style="text-align:left;font-size:12px;">
+				LIMO CARS DOO daje korisniku na korišćenje vozilo pod Odredbama i 
+				uslovima-utvrđenim ovim Ugovorom  primenljivim cenovnikom, našim Informacijama o najmu i 
+				Uputstvu  o postupanju korisnika u slučaju saobraćajne nezgode i ostalim pravilima</p>
+				<h6 style="text-align:center">Član 2</h6>
+				<p class="clan2" style="text-align:left;font-size:12px;">
+		           Korisnik se svojim potpisom saglasio sa ovim Ugovorom i cenovnikom i obavezuje se: da je iznajmljeno vozilo  preuzeo shodno zakonu  o osnovama bezbeđnostri  saobraćaja na putevrma
+				   <ol type="a">
+<li>	da je uz vozilo primio dokumenta za vozilo, ključeve za vozilo, svu obaveznu opremu i pribor, kao i dodatnu opremu i pribor naveden u ugovoru,da iznajmljeno vozilo nakon završenog najma vrati na mesto i u roku utvrđenom ovim Ugovorom, odnosno pre isteka najma, odmah na zahtev LIMO CARS-a, da odmah prekine vožnju ako se za vreme najma dogodi kvar na kilometar satu i odmah obavesti LIMO CARS.da iznajmljeno voziio neće koristiti u nedozvoljene svrhe (za vršenje krivičnih dela; carinskih, devizriih i drugih prekršaja, kao i drugih nedozvoljenih radnji) za obuku vozaca, za rentiranje trecem licu, prevoz tereta ili vuču drugih vozila ili prikolica i za sudelovanje u auto i sportskim priredbama, niti pod dejstvom alkohola, droga ili drugih opojnih sredstava, Ukoliko korisnik postupi suprotno ovoj tački, nadoknadiće bez odlaganja LIMO CARS-u pričinjenu štetu u punom iznosu,</li>
+<li>	da će iznajmljeno vozilo koristiti samo za sopstvene potrebe i vozilom upravljati korisnik ili lice koje ispunjava sve uslove i navedeno je u Ugovoru kao drugi vozač.Materijalna odgovomost ovih iica je solidarna.</li>
+<li>	da iznajmljeno vozilo ne optereti osobama ili predmetima preko dozvoljene maksimalne težine niti da vozilom pređe državnu granicu bez prethodno saglasnosti od strane LIMO CARS-a.U koliko korisnik pređe državnu granicu bez prethde dobijene saglasnosti u obavezi je da snosi svu materijalnu odgovornost  prema  nadležnim organima države u kojoj se zatekao sa iznajmijenim vozilom zapredmetni  prekršaj.  Da bez pismene saglasnosti LIMO CARS -a ne sme vršiti nikakvu promenu delova, sklopova, uređaja, opreme ili da menja na bilo koji način spoljašnji izgled vozila. Promenjene ili nedostajuce delove korisnik je dužan nadoknaditi LIMO CARS-u u visini njihove tržišne vrednosti najkasnije na dan vraćanja vozila, i da uređaje i sredstva za obezbeđenje vozila od krađe ko]a su na raspolaganju obavezno koristi i vozilo zaštiti, i da u svako doba omogući kontrolu vozila i dokumentacije ovlašćenom iicu LIMO CARS-a.</li>
+</ol>
+				</p>
+				<h6 style="text-align:center">Član 3</h6>
+				<p class="clan3"style="text-align:left;font-size:12px;">
+				
+				Korisnik je u obavezi da ispuni osnovne uslove za najam vozila i to:
+				posedovanje važeće vozačke dozvole, obavezna identifikacija sa ličnom kartom ili pasošem, 
+				dokaz o svojstvu korisnika u pravnom licu (ugovor o radu, punomocje, pečat firme I slično). 
+				Minimalna dužina najma je 1 dan (24h), tolerisaće se 60 minuta zakašnjenja vraćanja vozila, a potom automatski zaračunavati novi dan najma prema važećem cenovniku. Maksimalna dužina najma je 11 meseci, 
+				s tim što LIMO CARS  zadržava diskreciono pravo odlučivanja o dužini najma korishika vožila.
+				</p>
+				<h6 style="text-align:center">Član 4</h6>
+				<p class="clan4" style="text-align:left; font-size:12px;">
+				   
+				   Korisnik je dužan da pri zaključivanju ugovora akontira utvrđeni novčani 
+				   iznos i deponuje sva dokumenta i akta iz člana 3 ovog ugovora
+				</p>
+				<h6 style="text-align:center">Član 5</h6>
+				<p class="clan5" style="text-align:left; font-size:12px;">
+				
+				   Korisnik prihvata da isplati LIMO CARS-u:
+				   <ol type="a">
+<li>	najam voziia i ostale usluge prema važećem cenovniku. Za iznos uplaćene akontacije garantuje se cena najma do visine akontacije,</li>
+<li>	troškove goriva, opravke auto guma i naknada (drumarine, mostarine, trajekta, kazni. parking kazna. taksa i sudskih sporova) padaju na teret korisnika. Ukoliko ih je LIMO CARS  prethodno platio, refundiraće ih od korisnika, povratnu kilometražu kad korisnik vraća iznajmljeno vozilo van ugovorenog mesta vraćanja vozila.</li>
+<li>	Za gubitak dokumenta ili kljuceva zaracunavamo odstetu od 300 eura u dinarskoj protiv vrednosti.</li>
+</ol>
+				</p>
+				<h6 style="text-align:center">Član 6</h6>
+				<p class="clan6" style="text-align:left; font-size:12px;">
+				
+				Korisniku se na korišćenje daje tehnički ispravno voziio, a za sve eventualne tehničke neispravnosti koje nastanu u toku najma 
+pogonskog mehanizma, mehjaća, kvacila, kartera ili drugog ugovorene strane će u ovlašćenom servisu, izvršiti defektažu kvara, 
+i utvrditi visinu materijalne štele. Ukoliko je do kvara došlo usled  nepažnje korisnika, 
+korisnik je dužan da nadoknadi LIMO CARS-u pričinjenu materijainu štetu na vozilu u punom iznosu i izgubljenu dobit  zbog nekorišćenja vozila u visini minimalne zarade LIMO CARS-a prema važećem cenovniku, 
+a ne više od 30 dana. U slučaju totalne havarije korisnik je dužan da LIMO CARS-u nadoknadi izgubljenu dobit od dana havarije do dana zamene havarisanog vozila novim.
+				</p>
+				 <h6 style="text-align:center">Član 7</h6>
+				<p class="clan7"style="text-align:left;font-size:12px;">
+				 
+				 U slučaju saobraćajnog udesa, havarije, kradje vozila ili delova ili pogonske neispravnosti vozila  korisnik je dužan da ne napušta vozilo  dok ga nije obezbedio za preuzimanje od strane LIMO CARS-a, da sačeka organe MUP-a i obezbedi  njihov zapisnik, i da pravilno popuni Evropski izveštaj o saobracajnoj nezgodi sern u slučaju pogonske neispravnosti vozila i podnese pismenu izjavu najbiižoj poslovnici  LIMO CARS-a. 
+				 Ukoiiko korisnik propusti  neke od navede-nih radnji i time pričini štetu  LIMO CARS-u. dužan je da pricinjenu stetu nadoknadi u punom iznosu.
+				</p>
+				<h6 style="text-align:center">Član 8</h6>
+				<p class="clan8" style="text-align:left; font-size:12px;">
+				 
+				Korisnik svojim potpisom potvrđuje da je upoznat da cena najma ukliucje osiguranje vozila, obavezno osiguranje i  kasko osiguranje, ali korisnik I u slucaju da nije kriv snosi 20% ucesca u steti.
+Osiguranje ne pokriva sledeće: štete nastale u unutrašnjosti vozila; štete nastale na šasiji vozila’i donje strane; oštećenje guma i točkova, ili izgubljena dokumenta .stete'tankanjem pogrešne vrste goriva; šiete nastale svesno ili nepažnjom korisnika. Sva nabrojano biće naplacena.u punom iznosu korisniku najkasnije u momentu vraćanja vozila
+
+				</p>
+				<h6 style="text-align:center">Član 9</h6>
+				<p class="clan9"style="text-align:left; font-size:12px;">
+				 
+				 LIMO CARS  ne odgovara za štetu pričinjenu ireoi rrucma nastav- nepropisnom vožnjom korisnika vozila.
+				 Za štetu nastalu gubitkom ili oštećenjem prtljagakoje se nalazi u vozilu.
+				</p>
+				<h6 style="text-align:center">Član 10</h6>
+				<p class="clan10" style="text-align:left; font-size:12px;">
+				Korisnik je dužan da voziio vrati u ugovorenom roku na ugovorenom mestu.
+				U slučaju za produženjem najma potpisaće se novi ugovor pošto korisnik izmiri sve obaveze po prethodnom zaključenom ugovoru.
+				Za produženje najma potrebno je da traži saglasnost LIMO CARS-a 24 sata pre isteka ugovora
+				</p>
+				<h6 style="text-align:center">Član 11</h6>
+				<p class="clan11" style="text-align:left; font-size:12px;">
+				U slučaju spora po ovom ugovoru ugovorene  strane će pokušati da spor reše vansudskim sporazumom. 
+				U suprotnom priznaju nadležnost suda u Vranju.
+				</p>
+				<h6 style="text-align:center">Član 12</h6>
+				<p class="clan12" style="text-align:left; font-size:12px;">
+				 Za sve što nije predvideno ovim ugovoiorn primenjivaće se Zakon o obligacionim odnosima Republike Srbije
+				 </p>
+				 <h6 style="text-align:center">Član 13</h6>
+				 <p class="clan13"style="text-align:left; font-size:12px;">
+				  Uputstvo o postupanju korisnika za šiučaj saobraćajne nezgode predstavlja sastavni dec ovog ugovora i korisnik svojim potpisom potvrđuje da je upoznat sa sadržajem istog,
+                  Ovaj ugovor jesačinjeri u 3 istovetna primerka, 2 za LIMO CARS  i 1 za korisnika.
+                  Uputstvo za postupanje korisnika u slučaju saobraćajne nezgode POLiCIJSKI ZAPISNICISU OBAVEZNI ZA SVE VRSTE OSIGURANJA!
+U koliko korisnik vozila ne obezbedi prisustvo policije odnosno policiiski zapisnik j pravilno pcpmjen ‘Evropski  izveštaj o saobraćajnoj nezgodi" pun iznos štete i /ili krade biće naplaćen od korisnika
+Policijski zapisnik je neophodno saćiniti i pravilno  popuniti "Evrppski izveštaj o saobračanoj nezgodi" ćak i u slučaju kada klijent nije bio prisutan prilikom oštečenjui vozila (npr. vozilo je oštećenona parkingu od strane NN osobe!)
+POSTUPCi u slučaju nesreće/štete .
+Korisnik je obavezan da postupi na sledeći  način:
+<ul>
+<li>ODMAH da obavesti policiju i LIMO CARS DOO  o događaju i da postupi po njihoviin inistrukcijama.
+<li>Korisnik ne može upravijati vozilom pod	dejstvom alkohola, lekova i droge, bez položenog vozaćkog Ispita za tu kategortju vozila bez zelenog kartona.za siučaj upravljanja vozilom u Inostranstvu</li>
+<li>U ovim slućajevima osiguranje NE VAŽI klijentu se naplaćuje pun iznos štete/krađe.</li>
+<li>Korisnik  ne sme iznajmljivati vozilo I davati na korišćenje neovlašćenim licima tj. licima koja nisu upisana u ugovoru o najamu. U ovim slučajevima, osiguranje NE VAŽI korisniku od istog se naplaćuje  pun iznos štete</li>
+</ul>
+				 </p>
+  </div>          
+    <div style="display: flex;flex-direction: row;justify-content:space-between;">    
+		<p class ="potpis"> 
+		<label>LimoCars</label>
+		<input type="text"  class="forma"  > </p>
+	  
+		<p id="datum" ></p><script>const d = new Date();var datum=d.getMonth()+1;
+               document.getElementById("datum").innerHTML =d.getDate().toString()+"."+datum.toString()+"."+d.getFullYear().toString();</script>     
+		  <p class ="potpis"> 
+		<label>Korisnik</label>  <input type="text"   class="forma">
+		</p>
+       </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script>
+$('#exportForm').click(function(){
+  var pdf = new jsPDF('a', 'mm', 'a4');
+  var firstPage;
+  var secondPage;
+  
+  html2canvas($('#first-page'), {
+    onrendered: function(canvas) {
+      firstPage = canvas.toDataURL('image/jpeg', 1.0);
+    }
+  });
+  
+  html2canvas($('#second-page'), {
+    onrendered: function(canvas) {
+      secondPage = canvas.toDataURL('image/jpeg', 1.0);
+    }
+  });
+  
+  
+  setTimeout(function(){
+    pdf.addImage(firstPage, 'JPEG', 5, 5, 200, 0);
+    pdf.addPage();
+    pdf.addImage(secondPage, 'JPEG', 5, 5, 200, 0);
+    pdf.save(document.getElementById("ime").value+"LimoCars.pdf");
+  }, 150);
+});
+
+</script>
+</body>
+</html>
